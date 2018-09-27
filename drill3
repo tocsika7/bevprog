@@ -1,44 +1,55 @@
 #include "std_lib_facilities.h"
+#include <iostream>
+#include <string>
 
-int main()
-{
-	cout<<"Enter the name of the person you want to write to (followed by 'enter'):\n";
-	string first_name;
-	cin>>first_name;
-	cout<<"Dear, "<<first_name,"!";
+int main(){
+string firstname = "";
+string friendname = "";
+char friend_sex = 0;
+int age;
 
-cout<<"How are you?:\endl";
-cout<<"I'm fine, thanks:\endl";
-cout<<"I miss you:\endl";
-
-string friend_name;
-cout<<"Have you seen "<<friend_name<<" lately?"<<endl;
-    if (friend_sex=='m'){
-        cout<<"If you see "<<friend_name<<" tell him to call me."<<endl;
-
-    }
-    else if(friend_sex=='f'){
-        cout<<"If you see "<<friend_name<<" tell her to call me."<<endl;
-int age =0;
+cout<<"Enter the name of the person you want to write to!"<<endl;
+cin>>firstname;
+cout<<"Dear, "<<firstname<<endl;
+cout<<"How are you?"<<endl;
+cout<<"Im fine"<<endl;
+cout<<"I miss you"<<endl;
+cout<<"Enter the name of an other firend!"<<endl;
+cin>>friendname;
+cout<<"Have you seen "<<friendname<<" lately?"<<endl;
+cout<<"Enter an m if the friend is male and f if the friend is female"<<endl;
+cin>>friend_sex;
+if(friend_sex=='f')
+cout<<"If you see "<<friendname<<" please ask her to call me!"<<endl;
+else{
+if(friend_sex=='m')
+cout<<"If you see "<<friendname<<" please ask him to call me!"<<endl;
+else
+cout<<"Your answer was not f or m!"<<endl;}
+cout<<"Enter the age of the firend!"<<endl;
+cin>>age;
 cout<<"I hear you just had a birthday and you are "<<age<<" years old."<<endl;
-if(age<12){
-        cout<<"Next year you will be "<<age+1<<"."<<endl;
+if(age==0||age>=110)
+cout<<"You are kidding!"<<endl;
+else{
+if(age<12)
+cout<<"Next year you will be "<<age+1<<" years old."<<endl;
+else{
+if(age==17)
+cout<<"Next year you can vote!"<<endl;
+else{
+if(age>70)
+cout<<"Enjoy your retirement!"<<endl;}}}
+cout<<"Yours sincerely,			Csaba Tóth"<<endl;
 
 
-    }
-        if(age == 17){
-        cout<<"Next year you will be able to vote."<<endl;
-    }
 
 
-    if(age>70){
-        cout<<"I hope you are enjoying your retirement."<<endl;
-    }
 
-    cout<<"Yours sincerely, Csaba Toth."<<endl;
 
-		
 
-	
-	return 0;
+
+
+
+return 0;
 }
