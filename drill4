@@ -1,0 +1,86 @@
+#include "std_lib_facilities.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main()
+{
+string mert ="";
+double szam=0;
+double max;
+double min;
+double ossz;
+vector <double> v;
+
+
+
+while(mert!="|"){								//ciklus
+cout<<"Adj meg egy szamot!"<<endl;
+cin>>szam;
+cout<<"Adj meg egy mertekegyseget: (cm,m,in,ft), irj |-t a kilepeshez\n";
+cin>>mert;
+if(mert == "m"){
+v.push_back(szam);
+}
+else{
+if(mert == "cm"){
+v.push_back(szam/100);
+}
+else{
+if(mert == "in"){
+v.push_back(szam*0.0254);
+}
+else{
+if(mert == "ft"){
+v.push_back(szam*0.3048);
+}
+else{
+if(mert == "|"){
+cout<<"Kilepett a ciklusbol"<<endl;
+}
+else{
+cout<<"Rossz mertekegyseg lett megadva"<<endl;
+}}}}}}
+max=v[0];
+for(int i=0;i<v.size();i++){		//max
+if(v[i]>max)
+max=v[i];
+}
+min=v[0];
+for(int i=0;i<v.size();i++){		//min
+if(v[i]<min)
+min=v[i];
+}
+for(int i=0;i<v.size();i++){		//osszeg
+ossz=ossz+v[i];
+}
+
+for(int i=0;i<v.size()-1;i++){
+for(int j=i+1;j<v.size();j++){
+if(v[i]>v[j]){
+double s=v[i];
+v[i]=v[j];
+v[j]=s;
+}}}
+cout<<""<<endl;
+cout<<"A bekert szamok, rendezett novekvo sorrendben"<<endl;	//kiiratas
+for(int i=0;i<v.size();i++){
+cout<<v[i]<<" m"<<endl;
+}
+
+cout<<"Legnagyobb elem: "<<max<<" m"<<endl;
+cout<<"Legkisebb elem: "<<min<<" m"<<endl;
+cout<<"Elemek osszege: "<<ossz<<" m"<<endl;
+cout<<"Elemek darabszama: "<<v.size()<<" db"<<endl;
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
