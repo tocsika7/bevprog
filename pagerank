@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#include "std_lib_facilities.h"
+#include <vector>
+
+
+
+
+void
+kiir(vector <double> v)
+{
+for(int i=0;i<v.size();i++)
+{
+cout<<v[i]<<" "<<endl;
+}
+}
+int main()
+{
+vector <vector <double>> L ={
+{0.0,0.0,1.0/3.0,0.0},
+{1.0,1.0/2.0,1.0/3.0,1.0},
+{0.0,1.0/2.0,0.0,0.0},
+{0.0,0.0,1.0/3.0,0.0}
+};
+
+vector <double> PR={0.0,0.0,0.0,0.0};
+vector <double> PRv= {1.0/4.0,1.0/4.0,1.0/4.0,1.0/4.0};
+
+int i, j;
+
+for(;;){
+
+
+kiir(PR);
+
+
+return 0;
+}
